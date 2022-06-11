@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  top15BooksByMonthAndYearApiBaseUrl: 'https://hapi-books.p.rapidapi.com/month',
+  SearchBookByNameApiBaseUrl: 'https://hapi-books.p.rapidapi.com/search',
+  XRapidAPIHeaderName: 'X-RapidAPI-Host',
+  XRapidAPIHeaderValue: 'hapi-books.p.rapidapi.com',
+  XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',
+  XRapidAPIKeyHeaderValue: '8deaa31b8dmsh5b87e23e302820fp172d2ajsn4050dd4c5bf7'
 };
 
 /*
