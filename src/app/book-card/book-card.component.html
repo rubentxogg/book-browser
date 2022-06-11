@@ -1,13 +1,19 @@
-<mat-card *ngFor="let book of books">
-  <img [src]="book.cover" alt="cover" />
-  <mat-card-title>{{ book.name }}</mat-card-title>
-  <mat-card-subtitle>Patrick Rothfuss</mat-card-subtitle>
-  <mat-card-content>Desc.</mat-card-content>
-  <mat-card-actions>
-    <mat-chip-list>
-      <mat-chip selected="true">{{ book.position }}</mat-chip>
-      <mat-chip selected="true">Adventure</mat-chip>
-      <mat-chip selected="true">{{ book.rating }}</mat-chip>
-    </mat-chip-list>
-  </mat-card-actions>
-</mat-card>
+<ng-container *ngIf="books.length then loaded else loading"></ng-container>
+
+<ng-template #loading> Loading...</ng-template>
+
+<ng-template #loaded>
+  <mat-card *ngFor="let book of books">
+    <img [src]="book.cover" alt="cover" />
+    <mat-card-title>{{ book.name }}</mat-card-title>
+    <mat-card-subtitle>Patrick Rothfuss</mat-card-subtitle>
+    <mat-card-content>Desc.</mat-card-content>
+    <mat-card-actions>
+      <mat-chip-list>
+        <mat-chip selected="true">{{ book.position }}</mat-chip>
+        <mat-chip selected="true">Adventure</mat-chip>
+        <mat-chip selected="true">{{ book.rating }}</mat-chip>
+      </mat-chip-list>
+    </mat-card-actions>
+  </mat-card>
+</ng-template>
