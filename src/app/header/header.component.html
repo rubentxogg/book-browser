@@ -1,0 +1,20 @@
+<header>
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{ routeName }}</span>
+
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        routerLink="/top15-books"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        Top 15 books in a month of a year
+      </button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </mat-toolbar>
+</header>

@@ -6,17 +6,3 @@
   --shadow-dark: rgba(0, 0, 0, 0.3);
   --shadow-light: rgba(255, 255, 255, 0.1);
 }
-
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
-  background-color: var(--white);
-  display: flex;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  justify-content: center;
-}
-
-.card-container {
-  display: flex;
-  margin: 1rem;
-}
