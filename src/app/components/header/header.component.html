@@ -3,9 +3,19 @@
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>{{ routeName }}</span>
+
+    <span>Book browser</span>
 
     <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        mat-menu-item
+        routerLink="/books-by-name"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        Search by name
+      </button>
       <button
         mat-menu-item
         routerLink="/top15-books"
@@ -14,7 +24,6 @@
       >
         Top 15 books in a month of a year
       </button>
-      <button mat-menu-item>Item 2</button>
     </mat-menu>
   </mat-toolbar>
 </header>

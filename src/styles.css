@@ -3,6 +3,17 @@
 :root {
   --white: #fff;
   --grey-1: #ededed;
-  --shadow-dark: rgba(0, 0, 0, 0.3);
-  --shadow-light: rgba(255, 255, 255, 0.1);
+  --dark: rgba(0, 0, 0, 0.719);
+  --light: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 2rem !important;
+  margin-top: 7rem !important;
+  text-align: center;
+  color: var(--dark);
 }
