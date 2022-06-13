@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { Top15BooksComponent } from './views/top15-books/top15-books.component';
 import { BooksByNameComponent } from './views/books-by-name/books-by-name.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { BooksByNameComponent } from './views/books-by-name/books-by-name.compon
     HeaderComponent,
     Top15BooksComponent,
     BooksByNameComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
