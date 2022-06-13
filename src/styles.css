@@ -23,3 +23,15 @@ h1 {
   text-align: center;
   color: var(--dark);
 }
+
+hr {
+  margin-bottom: 1rem;
+  width: 40%;
+  color: var(--dark);
+}
+
+app-book-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
