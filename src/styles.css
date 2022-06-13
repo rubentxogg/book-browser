@@ -18,8 +18,8 @@ body {
 }
 
 h1 {
-  font-size: 2rem !important;
-  margin-top: 7rem !important;
+  font-size: 1.7rem !important;
+  margin-top: 5rem !important;
   text-align: center;
   color: var(--dark);
 }

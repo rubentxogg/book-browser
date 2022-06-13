@@ -1,6 +1,4 @@
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   font-size: 2rem;
 }
@@ -20,4 +18,9 @@ span {
 
 a:link, a:visited, a:active {
   color: inherit;
+}
+
+hr {
+  width: 85%;
+  color: var(--light);
 }
