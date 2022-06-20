@@ -12,10 +12,6 @@ span {
   font-size: 1.1rem;
 }
 
-.spacer {
-  flex: 1 1 auto;
-}
-
 a:link, a:visited, a:active {
   color: inherit;
 }

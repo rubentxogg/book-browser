@@ -30,6 +30,10 @@ hr {
   color: var(--dark);
 }
 
+.spacer {
+  flex: 1 1 auto;
+}
+
 app-book-card {
   display: flex;
   flex-wrap: wrap;

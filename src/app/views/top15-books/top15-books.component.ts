@@ -13,6 +13,8 @@ import {
 
 import * as _moment from 'moment';
 import { Moment } from 'moment';
+import { BookService } from 'src/app/services/book.service';
+import { Book } from 'src/app/models/book.model';
 
 const moment = _moment;
 
@@ -43,11 +45,24 @@ export const MY_FORMATS = {
   ],
 })
 export class Top15BooksComponent {
+
+  constructor(private bookService: BookService) {}
+  
+  public isLoading: boolean = false;
+  public isError: boolean = false;
+  public books: Book[] = [];
   public date: FormControl = new FormControl(moment());
   public month: string = "";
   public year: string = "";
 
-  setMonthAndYear(normalizedMonthAndYear: Moment, datepicker: MatDatepicker<Moment>) {
+  public isDisabled(): boolean {
+    if(this.month === "" || this.year === "") {
+      return true;
+    }
+    return false;
+  }
+
+  public setMonthAndYear(normalizedMonthAndYear: Moment, datepicker: MatDatepicker<Moment>) {
     const ctrlValue = this.date.value;
     ctrlValue.month(normalizedMonthAndYear.month());
     ctrlValue.year(normalizedMonthAndYear.year());
@@ -55,5 +70,19 @@ export class Top15BooksComponent {
     this.month = ctrlValue.month();
     this.year = ctrlValue.year();
     datepicker.close();
+  }
+
+  public getTop15BooksByMonthAndYear(month: string, year: string): void {
+    this.isLoading = true;
+    this.bookService.getTop15BooksByMonthAndYear(month, year).subscribe({
+      next: (response) => {
+        this.books = response;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.isError = true;
+      },
+    });
   }
 }
