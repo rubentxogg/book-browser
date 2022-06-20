@@ -20,6 +20,15 @@ a:link, a:visited, a:active {
   color: inherit;
 }
 
+a {
+  transition: linear 100ms;
+}
+
+a:hover {
+  opacity: 75%;
+  transition: linear 100ms;
+}
+
 hr {
   width: 85%;
   color: var(--light);
