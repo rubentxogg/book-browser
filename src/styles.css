@@ -17,19 +17,6 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-size: 1.7rem !important;
-  margin-top: 5rem !important;
-  text-align: center;
-  color: var(--dark);
-}
-
-hr {
-  margin-bottom: 1rem;
-  width: 40%;
-  color: var(--dark);
-}
-
 .spacer {
   flex: 1 1 auto;
 }

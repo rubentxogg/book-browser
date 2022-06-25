@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class BooksByNameComponent {
 
+  public panelOpenState: boolean = false;
+
+  public openClose(): string {
+    if(this.panelOpenState) {
+      return "close";
+    }
+    return "open";
+  }
 }

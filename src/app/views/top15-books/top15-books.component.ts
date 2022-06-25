@@ -54,6 +54,14 @@ export class Top15BooksComponent {
   public date: FormControl = new FormControl(moment());
   public month: string = "";
   public year: string = "";
+  public panelOpenState: boolean = false;
+
+  public openClose(): string {
+    if(this.panelOpenState) {
+      return "close";
+    }
+    return "open";
+  }
 
   public isDisabled(): boolean {
     if(this.month === "" || this.year === "") {

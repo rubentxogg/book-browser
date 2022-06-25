@@ -1,2 +1,9 @@
-<h1>Search books by name</h1>
-<hr>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header (click)="panelOpenState = !panelOpenState">
+      <mat-panel-title> Search by name </mat-panel-title>
+      <mat-panel-description>Click to {{ openClose() }} filter</mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+  <mat-expansion-panel> </mat-expansion-panel>
+</mat-accordion>
