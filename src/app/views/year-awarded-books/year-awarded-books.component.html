@@ -1,0 +1,19 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header (click)="panelOpenState = !panelOpenState">
+      <mat-panel-title> Awarded books of a year </mat-panel-title>
+      <mat-panel-description>Click to {{ openClose() }} filter</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="browser">
+      <button
+        class="search-btn"
+        mat-raised-button
+        color="primary"
+        [disabled]="isDisabled()"
+      >
+        Search <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

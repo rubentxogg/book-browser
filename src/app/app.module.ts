@@ -13,6 +13,7 @@ import { Top15BooksComponent } from './views/top15-books/top15-books.component';
 import { BooksByNameComponent } from './views/books-by-name/books-by-name.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatInputModule } from '@angular/material/input';
+import { YearAwardedBooksComponent } from './views/year-awarded-books/year-awarded-books.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
     Top15BooksComponent,
     BooksByNameComponent,
     FooterComponent,
+    YearAwardedBooksComponent,
   ],
   imports: [
     BrowserModule,
