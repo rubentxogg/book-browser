@@ -20,7 +20,8 @@
         </mat-datepicker>
       </mat-form-field>
 
-      <button
+      <button 
+        class="search-btn"
         mat-raised-button
         color="primary"
         [disabled]="isDisabled()"
@@ -29,11 +30,6 @@
         Search <mat-icon>search</mat-icon>
       </button>
     </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel
-    (opened)="panelOpenState = true"
-    (closed)="panelOpenState = false"
-  >
   </mat-expansion-panel>
 </mat-accordion>
 

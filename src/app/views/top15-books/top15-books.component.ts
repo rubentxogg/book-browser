@@ -48,13 +48,13 @@ export class Top15BooksComponent {
 
   constructor(private bookService: BookService) {}
   
-  public isLoading: boolean = false;
-  public isError: boolean = false;
+  public isLoading = false;
+  public isError = false;
   public books: Book[] = [];
   public date: FormControl = new FormControl(moment());
-  public month: string = "";
-  public year: string = "";
-  public panelOpenState: boolean = false;
+  public month = "";
+  public year = "";
+  public panelOpenState = false;
 
   public openClose(): string {
     if(this.panelOpenState) {
@@ -64,10 +64,7 @@ export class Top15BooksComponent {
   }
 
   public isDisabled(): boolean {
-    if(this.month === "" || this.year === "") {
-      return true;
-    }
-    return false;
+    return (this.month === "" || this.year === "");
   }
 
   public setMonthAndYear(normalizedMonthAndYear: Moment, datepicker: MatDatepicker<Moment>) {

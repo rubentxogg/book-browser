@@ -26,3 +26,16 @@ app-book-card {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
+.browser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.search-btn {
+  margin-left: 1.5rem !important;
+}
