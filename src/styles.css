@@ -39,3 +39,7 @@ app-book-card {
 .search-btn {
   margin-left: 1.5rem !important;
 }
+
+.filter {
+  margin-right: 0.2rem;
+}
