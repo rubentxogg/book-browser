@@ -26,4 +26,21 @@ export class BookService {
       }
     );
   }
+
+  public getBooksByName(name: string): Observable<Book[]> {
+    return this.http.get<Book[]>(
+      `${environment.searchBookByNameApiBaseUrl}/${name}`,
+      {
+        headers: new HttpHeaders()
+          .set(
+            environment.XRapidAPIHeaderName,
+            environment.XRapidAPIHeaderValue
+          )
+          .set(
+            environment.XRapidAPIKeyHeaderName,
+            environment.XRapidAPIKeyHeaderValue
+          )
+      }
+    );
+  }
 }

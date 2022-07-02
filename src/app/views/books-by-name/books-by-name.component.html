@@ -19,9 +19,17 @@
         mat-raised-button
         color="primary"
         [disabled]="isDisabled()"
+        (click)="getBooksByName(bookName)"
       >
         Search <mat-icon>search</mat-icon>
       </button>
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<app-book-card
+  [books]="books"
+  [isLoading]="isLoading"
+  [isError]="isError"
+  [name]="bookName"
+></app-book-card>

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   top15BooksByMonthAndYearApiBaseUrl: 'https://hapi-books.p.rapidapi.com/month',
-  SearchBookByNameApiBaseUrl: 'https://hapi-books.p.rapidapi.com/search',
+  searchBookByNameApiBaseUrl: 'https://hapi-books.p.rapidapi.com/search',
   XRapidAPIHeaderName: 'X-RapidAPI-Host',
   XRapidAPIHeaderValue: 'hapi-books.p.rapidapi.com',
   XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',

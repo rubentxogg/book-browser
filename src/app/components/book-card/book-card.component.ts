@@ -11,6 +11,7 @@ export class BookCardComponent {
   @Input() month: string | undefined;
   @Input() year: string | undefined;
   @Input() books: Book[] = [];
-  @Input() isLoading: boolean = false;
-  @Input() isError: boolean = false;
+  @Input() isLoading = false;
+  @Input() isError = false;
+  @Input() name: string | undefined;
 }
