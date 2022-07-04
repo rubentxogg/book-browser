@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {
   DateAdapter,
@@ -44,7 +44,7 @@ export const MY_FORMATS = {
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
 })
-export class Top15BooksComponent {
+export class Top15BooksComponent implements OnInit {
 
   constructor(private readonly bookService: BookService) {}
   
@@ -55,6 +55,12 @@ export class Top15BooksComponent {
   public month = "";
   public year = "";
   public panelOpenState = false;
+
+  ngOnInit(): void {
+    const ctrlValue = this.date.value;
+    this.month = ctrlValue.month();
+    this.year = ctrlValue.year();
+  }
 
   public openClose(): string {
     if(this.panelOpenState) {
