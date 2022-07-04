@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatInputModule } from '@angular/material/input';
 import { YearAwardedBooksComponent } from './views/year-awarded-books/year-awarded-books.component';
 import { WeeklyPopularBooksComponent } from './views/weekly-popular-books/weekly-popular-books.component';
+import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { WeeklyPopularBooksComponent } from './views/weekly-popular-books/weekly
     FooterComponent,
     YearAwardedBooksComponent,
     WeeklyPopularBooksComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
