@@ -1,0 +1,35 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header (click)="panelOpenState = !panelOpenState">
+      <mat-panel-title> Weekly popular books by genre </mat-panel-title>
+      <mat-panel-description> <mat-icon class="filter">filter_list</mat-icon> Click to {{ openClose() }} filter</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="browser">
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Genre</mat-label>
+        <input matInput type="text" [(ngModel)]="genre">
+        <button *ngIf="genre" matSuffix mat-icon-button aria-label="Clear" (click)="genre=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button
+        class="search-btn"
+        mat-raised-button
+        color="primary"
+        [disabled]="isDisabled()"
+        (click)="getWeeklyPopularBooksByGenre(genre)"
+      >
+        Search <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<app-book-card
+  [books]="books"
+  [isLoading]="isLoading"
+  [isError]="isError"
+  [genre]="genre"
+></app-book-card>

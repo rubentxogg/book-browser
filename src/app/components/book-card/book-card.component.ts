@@ -14,4 +14,5 @@ export class BookCardComponent {
   @Input() isLoading = false;
   @Input() isError = false;
   @Input() name: string | undefined;
+  @Input() genre: string | undefined;
 }

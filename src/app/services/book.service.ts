@@ -46,7 +46,24 @@ export class BookService {
 
   public getAwardedBooksOfAYear(year: string): Observable<Book[]> {
     return this.http.get<Book[]>(
-      `${environment.awardedBooksOfAYear}/${year}`,
+      `${environment.awardedBooksOfAYearUrl}/${year}`,
+      {
+        headers: new HttpHeaders()
+          .set(
+            environment.XRapidAPIHeaderName,
+            environment.XRapidAPIHeaderValue
+          )
+          .set(
+            environment.XRapidAPIKeyHeaderName,
+            environment.XRapidAPIKeyHeaderValue
+          )
+      }
+    );
+  }
+
+  public getWeeklyPopularBooksByGenre(genre: string): Observable<Book[]> {
+    return this.http.get<Book[]>(
+      `${environment.weeklyPopularBooksByGenreUrl}/${genre}`,
       {
         headers: new HttpHeaders()
           .set(
