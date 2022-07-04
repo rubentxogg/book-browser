@@ -6,12 +6,23 @@
     </mat-expansion-panel-header>
 
     <div class="browser">
-      <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Genre</mat-label>
-        <input matInput type="text" [(ngModel)]="genre">
-        <button *ngIf="genre" matSuffix mat-icon-button aria-label="Clear" (click)="genre=''">
-          <mat-icon>close</mat-icon>
-        </button>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a genre</mat-label>
+        <mat-select [(value)]="genre">
+          <mat-option value="fiction">Fiction</mat-option>
+          <mat-option value="mystery & thriller">Mystery & Thriller</mat-option>
+          <mat-option value="historical fiction">Historical Fiction</mat-option>
+          <mat-option value="fantasy">Fantasy</mat-option>
+          <mat-option value="romance">Romance</mat-option>
+          <mat-option value="science fiction">Science Fiction</mat-option>
+          <mat-option value="romance">Romance</mat-option>
+          <mat-option value="horror">Horror</mat-option>
+          <mat-option value="humor">Humor</mat-option>
+          <mat-option value="nonfiction">Nonfiction</mat-option>
+          <mat-option value="memoir & autobiography">Memoir & Autobiography</mat-option>
+          <mat-option value="history">History</mat-option>
+          <mat-option value="poetry">Poetry</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <button
