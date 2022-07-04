@@ -46,7 +46,7 @@ export const MY_FORMATS = {
 })
 export class Top15BooksComponent {
 
-  constructor(private bookService: BookService) {}
+  constructor(private readonly bookService: BookService) {}
   
   public isLoading = false;
   public isError = false;

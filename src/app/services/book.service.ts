@@ -43,4 +43,21 @@ export class BookService {
       }
     );
   }
+
+  public getAwardedBooksOfAYear(year: string): Observable<Book[]> {
+    return this.http.get<Book[]>(
+      `${environment.awardedBooksOfAYear}/${year}`,
+      {
+        headers: new HttpHeaders()
+          .set(
+            environment.XRapidAPIHeaderName,
+            environment.XRapidAPIHeaderValue
+          )
+          .set(
+            environment.XRapidAPIKeyHeaderName,
+            environment.XRapidAPIKeyHeaderValue
+          )
+      }
+    );
+  }
 }
