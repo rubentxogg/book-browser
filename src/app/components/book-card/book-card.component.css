@@ -1,13 +1,22 @@
 mat-card {
-  width: 20rem;
+  width: 24rem;
   margin: 1rem;
 }
 
 mat-card img {
   display: block;
   margin: auto;
-  width: 55%;
-  height: 55%;
+  max-width: 55%;
+  max-height: 55%;
   margin-bottom: 2rem;
   border-radius: 15px;
+}
+
+mat-card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.link-icon {
+  margin-right: 0.6rem;
 }

@@ -5,4 +5,6 @@ export interface Book {
   cover: string
   rating: number
   url: string
+  winning_category: string
+  authors: string[]
 }

@@ -5,18 +5,26 @@
 <ng-template #loaded>
   <ng-container *ngIf="isError; then error"></ng-container>
 
-  <mat-card *ngFor="let book of books">
+  <mat-card *ngFor="let book of books"> 
+    <span *ngIf="book.position" [matBadge]="book.position" matBadgeOverlap="false"></span>
     <img [src]="book.cover" alt="cover" />
     <mat-card-title>{{ book.name }}</mat-card-title>
-    <mat-card-subtitle>Patrick Rothfuss</mat-card-subtitle>
-    <mat-card-content>Desc.</mat-card-content>
+    <mat-card-subtitle *ngIf="book.authors">
+      <ng-container *ngFor="let author of book.authors; last as isLast">{{ author }}<span *ngIf="!isLast">, </span> </ng-container>
+    </mat-card-subtitle>
+    <mat-card-content>No description provided</mat-card-content>
     <mat-card-actions>
       <mat-chip-list>
-        <mat-chip selected="true">{{ book.position }}</mat-chip>
-        <mat-chip selected="true">Adventure</mat-chip>
-        <mat-chip selected="true">{{ book.rating }}</mat-chip>
+        <mat-chip *ngIf="book.rating" selected="true">Rating: {{ book.rating }}</mat-chip>
+        <mat-chip *ngIf="book.winning_category" selected="false">Winning category</mat-chip>
+        <mat-chip *ngIf="book.winning_category" selected="true">{{ book.winning_category }}</mat-chip>
       </mat-chip-list>
     </mat-card-actions>
+    <mat-card-footer>
+      <button mat-raised-button (click)="checkBookInGoodReads(book.url)">
+        <mat-icon class="link-icon">link</mat-icon>Check in www.goodreads.com
+      </button>
+    </mat-card-footer>
   </mat-card>
 </ng-template>
 

@@ -15,4 +15,8 @@ export class BookCardComponent {
   @Input() isError = false;
   @Input() name: string | undefined;
   @Input() genre: string | undefined;
+
+  public checkBookInGoodReads(url: string): void {
+    window.open(url, "_blank");
+  }
 }
