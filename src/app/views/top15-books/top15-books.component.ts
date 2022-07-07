@@ -55,9 +55,11 @@ export class Top15BooksComponent implements OnInit {
   public month = "";
   public year = "";
   public panelOpenState = false;
+  public maxDate: Date | undefined;
 
   ngOnInit(): void {
     const ctrlValue = this.date.value;
+    this.maxDate = new Date(ctrlValue.year(moment().year(), ctrlValue.year(moment().month)));
     this.month = ctrlValue.month();
     this.year = ctrlValue.year();
   }
@@ -85,7 +87,7 @@ export class Top15BooksComponent implements OnInit {
 
   public getTop15BooksByMonthAndYear(month: string, year: string): void {
     this.isLoading = true;
-    this.bookService.getTop15BooksByMonthAndYear(month, year).subscribe({
+    this.bookService.getTop15BooksByMonthAndYear(month + 1, year).subscribe({
       next: (response) => {
         this.books = response;
         this.isLoading = false;

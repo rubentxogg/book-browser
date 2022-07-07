@@ -54,9 +54,11 @@ export class YearAwardedBooksComponent implements OnInit {
   public panelOpenState = false;
   public date: FormControl = new FormControl(moment());
   public year = "";
+  public maxYear = 0;
 
   ngOnInit(): void {
     const ctrlValue = this.date.value;
+    this.maxYear = ctrlValue.year(moment().year() -1);
     this.year = ctrlValue.year();
   }
 
