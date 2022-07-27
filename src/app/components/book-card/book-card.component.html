@@ -1,10 +1,9 @@
 <ng-container *ngIf="isLoading; then loading; else loaded"></ng-container>
+<ng-container *ngIf="isError; then error"></ng-container>
 
 <ng-template #loading> <mat-spinner></mat-spinner> </ng-template>
 
 <ng-template #loaded>
-  <ng-container *ngIf="isError; then error"></ng-container>
-
   <mat-card *ngFor="let book of books"> 
     <span *ngIf="book.position" [matBadge]="book.position" matBadgeOverlap="false"></span>
     <img [src]="book.cover" alt="cover" />
@@ -29,7 +28,13 @@
 </ng-template>
 
 <ng-template #error>
-  <span>
-    <em class="bi bi-exclamation-circle"></em> Sorry, too many request (100 per month)
-  </span>
+  <h1>
+    <em class="bi bi-exclamation-circle"></em> Sorry, requests per month limit reached. I invite you to try another day <em class="bi bi-emoji-laughing"></em>
+  </h1>
+</ng-template>
+
+<ng-template #noBooksFound>
+  <h1>
+    <em class="bi bi-exclamation-circle"></em> No books have been found with your search criteria <em class="bi bi-emoji-frown"></em>
+  </h1>
 </ng-template>
