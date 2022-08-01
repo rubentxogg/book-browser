@@ -1,0 +1,21 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home img {
+    margin-top: 5rem;
+    width: 400px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.info {
+    margin-top: 5rem;
+    font-size: 1rem;
+    color: rgba(128, 128, 128, 0.822);
+}
