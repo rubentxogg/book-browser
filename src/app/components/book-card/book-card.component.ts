@@ -13,6 +13,7 @@ export class BookCardComponent {
   @Input() books: Book[] = [];
   @Input() isLoading = false;
   @Input() isError = false;
+  @Input() isEmpty = false;
   @Input() name: string | undefined;
   @Input() genre: string | undefined;
 

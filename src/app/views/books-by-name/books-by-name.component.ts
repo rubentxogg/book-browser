@@ -13,6 +13,7 @@ export class BooksByNameComponent {
 
   public isLoading = false;
   public isError = false;
+  public isEmpty = false;
   public panelOpenState = false;
   public bookName = "";
   public books: Book[] = [];
@@ -33,11 +34,19 @@ export class BooksByNameComponent {
     this.bookService.getBooksByName(name).subscribe({
       next: (response) => {
         this.books = response;
+        this.isError = false;
         this.isLoading = false;
+
+        if(!response.length) {
+          this.isEmpty = true;
+        } else {
+          this.isEmpty = false;
+        }
       },
       error: () => {
         this.isLoading = false;
         this.isError = true;
+        this.isEmpty = false;
       },
     });
   }

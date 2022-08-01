@@ -50,6 +50,7 @@ export class Top15BooksComponent implements OnInit {
   
   public isLoading = false;
   public isError = false;
+  public isEmpty = false;
   public books: Book[] = [];
   public date: FormControl = new FormControl(moment());
   public month = "";
@@ -90,11 +91,19 @@ export class Top15BooksComponent implements OnInit {
     this.bookService.getTop15BooksByMonthAndYear(month + 1, year).subscribe({
       next: (response) => {
         this.books = response;
+        this.isError = false;
         this.isLoading = false;
+
+        if(!response.length) {
+          this.isEmpty = true;
+        } else {
+          this.isEmpty = false;
+        }
       },
       error: () => {
         this.isLoading = false;
         this.isError = true;
+        this.isEmpty = false;
       },
     });
   }

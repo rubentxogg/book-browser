@@ -13,6 +13,7 @@ export class WeeklyPopularBooksComponent {
 
   public isLoading = false;
   public isError = false;
+  public isEmpty = false;
   public panelOpenState = false;
   public genre = "";
   public books: Book[] = [];
@@ -33,11 +34,19 @@ export class WeeklyPopularBooksComponent {
     this.bookService.getWeeklyPopularBooksByGenre(name).subscribe({
       next: (response) => {
         this.books = response;
+        this.isError = false;
         this.isLoading = false;
+
+        if(!response.length) {
+          this.isEmpty = true;
+        } else {
+          this.isEmpty = false;
+        }
       },
       error: () => {
         this.isLoading = false;
         this.isError = true;
+        this.isEmpty = false;
       },
     });
   }

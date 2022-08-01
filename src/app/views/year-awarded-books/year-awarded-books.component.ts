@@ -50,6 +50,7 @@ export class YearAwardedBooksComponent implements OnInit {
 
   public isLoading = false;
   public isError = false;
+  public isEmpty = false;
   public books: Book[] = [];
   public panelOpenState = false;
   public date: FormControl = new FormControl(moment());
@@ -86,11 +87,19 @@ export class YearAwardedBooksComponent implements OnInit {
     this.bookService.getAwardedBooksOfAYear(year).subscribe({
       next: (response) => {
         this.books = response;
+        this.isError = false;
         this.isLoading = false;
+
+        if(!response.length) {
+          this.isEmpty = true;
+        } else {
+          this.isEmpty = false;
+        }
       },
       error: () => {
         this.isLoading = false;
         this.isError = true;
+        this.isEmpty = false;
       },
     });
   }
