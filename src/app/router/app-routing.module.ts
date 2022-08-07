@@ -8,6 +8,7 @@ import { YearAwardedBooksComponent } from '../views/year-awarded-books/year-awar
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
+  { path: 'book-browser', redirectTo: 'home'},
   { path: 'home', component: HomeComponent },
   { path: 'top15-books', component: Top15BooksComponent },
   { path: 'books-by-name', component: BooksByNameComponent },
