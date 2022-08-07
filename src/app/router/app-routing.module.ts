@@ -7,7 +7,7 @@ import { WeeklyPopularBooksComponent } from '../views/weekly-popular-books/weekl
 import { YearAwardedBooksComponent } from '../views/year-awarded-books/year-awarded-books.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'top15-books', component: Top15BooksComponent },
   { path: 'books-by-name', component: BooksByNameComponent },
   { path: 'awarded-books', component: YearAwardedBooksComponent },
